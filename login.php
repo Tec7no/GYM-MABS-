@@ -1,3 +1,39 @@
+<?php
+require("functions.php");
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === "POST"){
+
+    
+
+    if (isset($_POST['submit'])){
+        $email = check($_POST['email']);
+        $password = check($_POST['password']);
+
+        $error = array(
+            'email' => '',
+            'password' => ''
+        );
+
+        // Email validation
+        if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error['email'] = "Invalid email";
+        }
+
+        // Password validation
+        if (!$password || !ctype_alnum($password) || strlen($password) <= 8 || strlen($password) >= 20) {
+            $error['password'] = "Invalid password";
+        }
+
+        // Further processing if there are no errors
+        if (empty($error['password']) && empty($error['email'])) {
+            header("Location: index.php");
+        }
+    }
+}
+?>
+
+
+
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
@@ -43,7 +79,45 @@
 }
 
 </style>
+<style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropbtn {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropbtn i {
+            margin-right: 5px;
+        }
+    </style>
 <title>MABS - Login</title>
 <script src="js/login.js"></script>
 </head>
@@ -67,7 +141,7 @@
 
 <div class="login-box">
 	<h2>Login</h2>
-	<form method="post" action="" onsubmit="return loginwelcome()">
+	<form method="post" action="index.php" >
 		<div class="user-box">
 			<input type="email" name="email" id="email" required>
 			<label for="email">E-mail</label>

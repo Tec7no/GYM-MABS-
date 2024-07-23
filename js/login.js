@@ -14,9 +14,3 @@ type="text/javascript">
         var header = document.querySelector("header");
         header.classList.toggle("sticky", window.scrollY >0);
         })
-
-function loginwelcome(){
-    var user = document.getElementById("email").value;
-    let x = "Hi " + user + ", Welcome To MABS ♥" ;
-    alert(x);
-}

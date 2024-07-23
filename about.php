@@ -1,3 +1,6 @@
+<?php
+require("session.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,25 +11,71 @@
     <link rel="stylesheet" href="about.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="js/scroll.js"></script>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropbtn {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropbtn i {
+            margin-right: 5px;
+        }
+    </style>
   </head>
   <body>
 
-    <header>
-        <a href="index.php" >MABS</a>
-        <div> 
-        <ul id="navbar">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="shop.php">Shop</a></li>
-        <li><a class="active" href="#">About</a></li>
-        <li><a href="login.php"><i class="fa-solid fa-user"></i></a></li>
-        <li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(0)</i></a></li>
-        </ul>
-        </div>
-    </header>
+  <header>
+      <a href="index.php">MABS</a>
+      <div> 
+      <ul id="navbar">
+          <li><a href="index.php">Home</a></li>
+          <li><a href="shop.php">Shop</a></li>
+          <li><a class="active" href="about.php">About</a></li>
+          <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">
+                  <i class="fa-solid fa-user"></i> <?php echo htmlspecialchars($username); ?>
+              </a>
+              <div class="dropdown-content">
+                  <a href="logout.php">Logout</a>
+              </div>
+          </li>
+          <li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(0)</i></a></li>
+      </ul>
+      </div>
+  </header>
 
     <section class="about-us">
       <div class="about">
-        <img src="/img/x.jpeg" class="pic" alt="err" />
+        <img src="img/x.jpeg" class="pic" alt="err" />
         <div class="text">
           <h2>About Us</h2>
           <h5>Front-end Developer & <span class="span">Designer</span></h5>

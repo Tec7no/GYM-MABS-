@@ -128,24 +128,17 @@ if(isset($_POST['submit'])){
 <body>
 
 <header>
-      <a href="index.php">MABS</a>
-      <div> 
-      <ul id="navbar">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="shop.php">Shop</a></li>
-          <li><a href="about.php">About</a></li>
-          <li class="dropdown">
-              <a href="javascript:void(0)" class="dropbtn" class="active">
-                  <i class="fa-solid fa-user"></i> <?php echo htmlspecialchars($username); ?>
-              </a>
-              <div class="dropdown-content">
-                  <a href="logout.php">Logout</a>
-              </div>
-          </li>
-          <li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(0)</i></a></li>
-      </ul>
-      </div>
-  </header>
+	<a href="index.php" >MABS</a>
+	<div> 
+	<ul id="navbar">
+	<li><a href="index.php">Home</a></li>
+	<li><a href="shop.php">Shop</a></li>
+	<li><a href="aboutus.php">About</a></li>
+	<li><a class="active" href="#"><i class="fa-solid fa-user"></i></a></li>
+	<li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(0)</i></a></li>
+	</ul>
+	</div>
+</header>
 
 <div class="about-section"></div>
 

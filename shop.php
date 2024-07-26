@@ -79,10 +79,9 @@ require("session.php");
 </header>
 
 <section class="services">
-
-<h2 class="content" style="color: #fff;"><span class="span2">Our</span>services</h2>
+<h2 class="content"><span class="span2">Our </span>services</h2> 
 <div class="mc_amazon_card_box">
-<a href="shop.php" class="mc_amazon_card">
+<a href="sports_wear.php" class="mc_amazon_card">                             <!-- clothes tag -->
   <img src="img/main/05.jpg" alt="Avatar" style="width:100%">
   <div class="mc_amazon_card_container" style="background-color: black;">
     <span style="color: #fff;">The hottest fashion show!</span> 
@@ -91,7 +90,7 @@ require("session.php");
 </a>
 
 
-<a href="shop.php" class="mc_amazon_card">
+<a href="sports_supp.php" class="mc_amazon_card"> <!-- clothes tag -->
   <img src="img/main/01.jpg" alt="Avatar" style="width:100%">
   <div class="mc_amazon_card_container" style="background-color: black;">
     <span style="color: #fff;">Safe product & best sallary</span> 
@@ -99,7 +98,7 @@ require("session.php");
   </div>
 </a>
 
-<a href="shop.php" class="mc_amazon_card">
+<a href="Vitamins.php" class="mc_amazon_card">  <!-- vitamins tag -->
   <img src="img/main/04.jpg" alt="Avatar" style="width:100%">
   <div class="mc_amazon_card_container" style="background-color: black;">
     <span style="color: #fff;">Vitamins</span> 
@@ -108,8 +107,8 @@ require("session.php");
 </a>
 </div>
 
-<div class="mc_amazon_card_box">
-  <a href="shop.php" class="mc_amazon_card">
+<div class="mc_amazon_card_box">  <!-- healthy food tag -->
+  <a href="healthy_food.php" class="mc_amazon_card">
     <img src="img/main/03.jpg" alt="Avatar" style="width:100%">
     <div class="mc_amazon_card_container" style="background-color: black;">
       <span style="color: #fff;">Keep healthy :D</span> 
@@ -117,7 +116,7 @@ require("session.php");
     </div>
   </a>
   
-  <a href="shop.php" class="mc_amazon_card">
+  <a href="protain_bar.php" class="mc_amazon_card"> <!-- protain bar tag -->
     <img src="img/main/02.jpg" alt="Avatar" style="width:100%">
     <div class="mc_amazon_card_container" style="background-color: black;">
       <span style="color: #fff;">Protain bar bro ♥</span> 
@@ -125,7 +124,7 @@ require("session.php");
     </div>
   </a>
   
-  <a href="shop.php" class="mc_amazon_card">
+  <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
     <img src="img/main/06.jpg" alt="Avatar" style="width:100%">
     <div class="mc_amazon_card_container" style="background-color: black;">
       <span style="color: #fff;">Fat burners</span> 

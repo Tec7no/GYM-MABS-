@@ -2,16 +2,61 @@
 require("session.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link rel="stylesheet" href="style.css"/>    
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>MABS Supplement</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<link rel="stylesheet" href="style.css">
 <script src="js/scroll.js"></script>
+<style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropbtn {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropbtn i {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
+
 
 <header>
     <a href="index.php">MABS</a>
@@ -34,80 +79,108 @@ require("session.php");
 </header>
 
 <section class="services">
-  <div class="box" style="padding-top: 100px">
+<h2 class="content" style="font-size : 40px;"><span class="span2">Protain&nbsp; </span>bar</h2> 
 
-    <div class="card">
-      <div class="image"><span class="text">This is a chair.</span></div>
-        <span class="title">Cool Chair</span>
-        <span class="price">$100</span>
+<div class="mc_amazon_card_box">
+
+    <a href="protain_bar.php" class="mc_amazon_card">                             <!-- clothes tag -->
+      <img src="img/protain_bar/0001.jpg" alt="Avatar" style="width:100%">
+      <div class="mc_amazon_card_container" style="background-color: black;">
+        <span style="color: #fff;">The hottest fashion show!</span> 
+        <p style="color: #fff;">See more</p> 
       </div>
-    
-      <div class="card">
-        <div class="image"><span class="text">This is a chair.</span></div>
-          <span class="title">Cool Chair</span>
-          <span class="price">$100</span>
-        </div>
-    
-        <div class="card">
-          <div class="image"><span class="text">This is a chair.</span></div>
-            <span class="title">Cool Chair</span>
-            <span class="price">$100</span>
-          </div>
+    </a>
 
-          <div class="card">
-              <div class="image"><span class="text">This is a chair.</span></div>
-                <span class="title">Cool Chair</span>
-                <span class="price">$100</span>
-              </div>
+
+    <a href="sports_supp.php" class="mc_amazon_card"> <!-- clothes tag -->
+      <img src="img/protain_bar/0002.jpg" alt="Avatar" style="width:100%">
+      <div class="mc_amazon_card_container" style="background-color: black;">
+        <span style="color: #fff;">Safe product & best sallary</span> 
+        <p style="color: #fff;">See more</p> 
+      </div>
+    </a>
+
+    <a href="protain_bar.php" class="mc_amazon_card">                             <!-- clothes tag -->
+      <img src="img/protain_bar/0003.jpg" alt="Avatar" style="width:100%">
+      <div class="mc_amazon_card_container" style="background-color: black;">
+        <span style="color: #fff;">The hottest fashion show!</span> 
+        <p style="color: #fff;">See more</p> 
+      </div>
+    </a>
+
+      <a href="healthy_food.php" class="mc_amazon_card">
+        <img src="img/protain_bar/0004.jpg" alt="Avatar" style="width:100%">
+        <div class="mc_amazon_card_container" style="background-color: black;">
+          <span style="color: #fff;">Keep healthy :D</span> 
+          <p style="color: #fff;">See more</p> 
+        </div>
+      </a>
   </div>
-  <div class="box" style="padding-top: 5px">
-          <div class="card">
-            <div class="image"><span class="text">This is a chair.</span></div>
-              <span class="title">Cool Chair</span>
-              <span class="price">$100</span>
-            </div>
+
+  <div class="mc_amazon_card_box">  
+    <a href="protain_bar.php" class="mc_amazon_card"> 
+      <img src="img/protain_bar/0005.jpg" alt="Avatar" style="width:100%">
+      <div class="mc_amazon_card_container" style="background-color: black;">
+        <span style="color: #fff;">Protain bar bro ♥</span> 
+        <p style="color: #fff;">See more</p> 
+      </div>
+    </a>
     
-            <div class="card">
-              <div class="image"><span class="text">This is a chair.</span></div>
-                <span class="title">Cool Chair</span>
-                <span class="price">$100</span>
-              </div>
+    <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
+      <img src="img/protain_bar/0006.jpg" alt="Avatar" style="width:100%">
+      <div class="mc_amazon_card_container" style="background-color: black;">
+        <span style="color: #fff;">Fat burners</span> 
+        <p style="color: #fff;">See more</p> 
+      </div>
+    </a>
     
-              <div class="card">
-                <div class="image"><span class="text">This is a chair.</span></div>
-                  <span class="title">Cool Chair</span>
-                  <span class="price">$100</span>
-                </div>
-            
-            <div class="card">
-              <div class="image"><span class="text">This is a chair.</span></div>
-                <span class="title">Cool Chair</span>
-                <span class="price">$100</span>
-              </div>
+
+    <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
+      <img src="img/protain_bar/0007.jpg" alt="Avatar" style="width:100%">
+      <div class="mc_amazon_card_container" style="background-color: black;">
+        <span style="color: #fff;">Fat burners</span> 
+        <p style="color: #fff;">See more</p> 
+      </div>
+    </a>
+
+
+  <a href="fat_burners.php" class="mc_amazon_card"> 
+    <img src="img/protain_bar/0008.jpg" alt="Avatar" style="width:100%">
+    <div class="mc_amazon_card_container">
+      <span style="color: #fff;">Fat burners</span> 
+      <p style="color: #fff;">See more</p> 
+    </div>
+  </a>
 </div>
 </section>
 
-    <footer>
-	<div class="footerContainer">
-		<div class="socialIcons">
-			<a href="https://www.facebook.com/profile.php?id=100077691227068"><i class="fa-brands fa-facebook"></i></a>
-			<a href="https://www.instagram.com/abdelaziz.derbala/"><i class="fa-brands fa-instagram"></i></a>
-			<a href="https://www.linkedin.com/in/abd-el-aziz-ayman-derbala-a3281621b/"><i class="fa-brands fa-linkedin"></i></a>
-			<a href="https://github.com/Tec7no"><i class="fa-brands fa-github"></i></a>
-		</div>
-		<div class="footerNav">
-			<ul><li><a href="index.php">Home</a></li>
-				<li><a href="index.php">News</a></li>
-				<li><a href="index.php">About</a></li>
-				<li><a href="index.php">Contact Us</a></li>
-				<li><a href="index.php">our Team</a></li>
-			</ul>
-		</div>
-		
-	</div>
-	<div class="footerBottom">
-		<p>Copyright &copy;2024; Designed by <span class="designer">Te父cno</span></p>
-	</div>
-  </footer>
+<div style="background-color:black;">
+<br><br><br><br><br><br>
+</div>
+
+<footer>
+  <div class="footerContainer" style="padding-top:100px;">
+      <div class="socialIcons">
+          <a href="https://www.facebook.com/profile.php?id=100077691227068"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/abdelaziz.derbala/"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/abd-el-aziz-ayman-derbala-a3281621b/"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/Tec7no"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div class="footerNav">
+          <ul><li><a href="index.php">Home</a></li>
+              <li><a href="index.php">News</a></li>
+              <li><a href="index.php">About</a></li>
+              <li><a href="index.php">Contact Us</a></li>
+              <li><a href="index.php">our Team</a></li>
+          </ul>
+      </div>
+      
+  </div>
+  <div class="footerBottom">
+      <p>Copyright &copy;2024; Designed by <span class="designer">Te父cno</span></p>
+  </div>
+</footer>
 </body>
+
 </html>
+

@@ -18,7 +18,6 @@ header {
 	top:0;
 	left:0;
 	width: 100%
-	
 }
 
 header a{
@@ -96,9 +95,6 @@ header.sticky{
   height: 100vh;
   width: 100%;
   padding: 90px 0;
-  background: url(img/3.jpg) ;
-  background-position: top 40% right 0;
-  background-size:cover;
 }
 
 .pic {
@@ -121,25 +117,25 @@ header.sticky{
 }
 
 .text h2 {
-  color: #e30202;
+  color: #673ab7;
   font-size: 90px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .text h5 {
-  color: #ff0000;
+  color: #673ab7;
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 20px;
 }
 
 .span {
-  color: #4070f4;
+  color: #FFEA00;
 }
 
 .text p {
-  color: #fff;
+  color: #000;
   font-size: 18px;
   line-height: 25px;
   letter-spacing: 1px;
@@ -151,7 +147,7 @@ header.sticky{
 
 .hire {
   font-size: 18px;
-  background: #8F7CEC;
+  background: #673ab7;
   color: #fff;
   text-decoration: none;
   border: none;

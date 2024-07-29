@@ -78,10 +78,10 @@ require("session.php");
         <img src="img/x.jpeg" class="pic" alt="err" />
         <div class="text">
           <h2>About Us</h2>
-          <h5>Front-end Developer & <span class="span">Designer</span></h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus ad sed harum itaque ullam enim quas, veniam accusantium, quia animi id eos adipisci iusto molestias asperiores explicabo cum vero atque amet corporis! Soluta illum facere consequuntur magni. Ullam dolorem repudiandae cumque voluptate consequatur consectetur, eos provident necessitatibus reiciendis corrupti!</p>
+          <h5>Full stack <span class="span">developer</span></h5>
+          <p>Welcome to our website! I'm Abd El-Aziz Ayman Derbala, a recent Computer Science graduate from Al-Ahram Canadian University. I specialize in web development using PHP and Laravel. I've worked on various projects, including e-commerce platforms and APIs, showcasing my skills in web development and database management. We're here to provide top-notch web solutions. Contact us to achieve your digital goals!</p>
           <div class="data">
-            <a href="#" class="hire">Hire Me</a>
+            <a href="https://www.linkedin.com/in/abd-el-aziz-ayman-derbala-a3281621b/" class="hire">Hire Me</a>
           </div>
         </div>
       </div>

@@ -78,8 +78,9 @@ require("session.php");
     </div>
 </header>
 
+
 <section class="services">
-<h2 class="content"><span class="span2">Our </span>services</h2> 
+<h2 class="content" style="font-size : 40px;"><span class="span2">Sports &nbsp;</span>wear</h2> 
 <div class="mc_amazon_card_box">
 <a href="sports_wear.php" class="mc_amazon_card">                             <!-- clothes tag -->
   <img src="img/main/05.jpg" alt="Avatar" style="width:100%">
@@ -133,7 +134,6 @@ require("session.php");
   </a>
   </div>
 </section>
-
 <footer>
   <div class="footerContainer">
       <div class="socialIcons">

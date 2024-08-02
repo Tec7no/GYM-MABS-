@@ -1,18 +1,17 @@
 <?php
 
- $hostname = "localhost";
- $dbname = "mabs";
- $dbuser= "Tecno";
- $dbuserpassword= "2890887Ate chno";
- 
- $dsn = "mysql:host=$hostname;dbname=$dbname";
- 
- if ($dsn->connect_error) {
-    die("Connection failed: " . $dsn->connect_error);
+$hostname = "localhost";
+$dbname = "mabs";
+$dbuser = "Tecno";
+$dbuserpassword = "2890887Ate chno";
+
+$dsn = "mysql:host=$hostname;dbname=$dbname";
+
+try {
+    $conn = new PDO($dsn, $dbuser, $dbuserpassword);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
 }
 
- $options = array(
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT,
- );
-
- ?>
+?>

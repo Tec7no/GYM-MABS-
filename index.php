@@ -1,5 +1,5 @@
 <?php
-require("session.php");
+include("session.php");
 ?>
 
 <!DOCTYPE html>
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 <section class="normal-sec">
-<h2 class="content">Best sells</h2>
+<h2 class="content" style="font-size : 50px;"><span class="span2">Best&nbsp;</span> sells</h2>
 <div class="mc_amazon_card_box">
 <a href="shop.php" class="mc_amazon_card">
   <img src="img/main/05.jpg" alt="Avatar" style="width:100%">

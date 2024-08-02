@@ -1,6 +1,8 @@
 <?php 
 require("functions.php");
+require("install.php");
 session_start();
+
 if(isset($_POST['submit'])){
     $username = check($_POST['username']);
     $email = check($_POST['email']);
@@ -34,55 +36,84 @@ if(isset($_POST['submit'])){
     }
 
     if (empty($error['username']) && empty($error['password']) && empty($error['email'])) {
-        $_SESSION['username'] = $username;
-        header("Location: index.php");
-        exit();
+        try {
+            // Check if user already exists
+            $sql = "SELECT * FROM users WHERE email = :email OR username = :username";
+            $stmt = $connection->prepare($sql);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':username', $username);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result) {
+                if ($result['email'] == $email) {
+                    $error['email'] = "Email already in use";
+                }
+                if ($result['username'] == $username) {
+                    $error['username'] = "Username already in use";
+                }
+            } else {
+                // Insert new user
+                $sql = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";
+                $stmt = $connection->prepare($sql);
+                $stmt->bindParam(':email', $email);
+                $stmt->bindParam(':username', $username);
+                $stmt->bindParam(':password', $password);
+                $stmt->execute();
+
+                $_SESSION['username'] = $username;
+                header("Location: index.php");
+                exit();
+            }
+        } catch (PDOException $e) {
+            die("Database error: " . $e->getMessage());
+        }
     }
 }
 ?>
 
+<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-<link rel="stylesheet" href="style.css"/>
-<style>
-.about-section {
-	background: url(img/3.jpg);
-	height: 100vh;
-	width: 100%;
-	background-position: top 40% right 0;
-	background-size: cover;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        .about-section {
+            background: url(img/3.jpg);
+            height: 100vh;
+            width: 100%;
+            background-position: top 40% right 0;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
 
-.user-box {
-    position: relative;
-    margin-bottom: 20px;
-}
+        .user-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
 
-.user-box input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 5px;
-}
+        .user-box input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
 
-.user-box label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
+        .user-box label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
 
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-	cursor: pointer;
-}
-</style>
-<style>
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+
         .dropdown {
             position: relative;
             display: inline-block;
@@ -120,24 +151,33 @@ if(isset($_POST['submit'])){
         .dropbtn i {
             margin-right: 5px;
         }
+
+        #err {
+            color: #FF9494;
+            border: 2px solid #FF9494;
+            background-color: rgba(255, 148, 148, 0.2);
+            border-radius: 0.5cm;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
     </style>
-<title>MABS - Sign Up</title>
-<script src="js/scroll.js"></script>
-<script src="js/signup.js"></script>
+    <title>MABS - Sign Up</title>
+    <script src="js/scroll.js"></script>
+    <script src="js/signup.js"></script>
 </head>
 <body>
 
 <header>
-	<a href="index.php" >MABS</a>
-	<div> 
-	<ul id="navbar">
-	<li><a href="index.php">Home</a></li>
-	<li><a href="shop.php">Shop</a></li>
-	<li><a href="aboutus.php">About</a></li>
-	<li><a class="active" href="#"><i class="fa-solid fa-user"></i></a></li>
-	<li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(0)</i></a></li>
-	</ul>
-	</div>
+    <a href="index.php">MABS</a>
+    <div> 
+        <ul id="navbar">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="shop.php">Shop</a></li>
+            <li><a href="aboutus.php">About</a></li>
+            <li><a class="active" href="#"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(0)</i></a></li>
+        </ul>
+    </div>
 </header>
 
 <div class="about-section"></div>
@@ -148,20 +188,20 @@ if(isset($_POST['submit'])){
         <div class="user-box">
             <input type="text" name="username" required>
             <label for="username">Username</label>
-            <?php if (!empty($error['username'])) echo "<p>{$error['username']}</p>"; ?>
+            <?php if (!empty($error['username'])) echo "<p id='err'>{$error['username']}</p>"; ?>
         </div>
         
         <div class="user-box">
             <input type="email" name="email" required>
             <label for="email">E-mail</label>
-            <?php if (!empty($error['email'])) echo "<p>{$error['email']}</p>"; ?>
+            <?php if (!empty($error['email'])) echo "<p id='err'>{$error['email']}</p>"; ?>
         </div>
         
         <div class="user-box">
             <input type="password" id="passwordField1" name="password" required autocomplete="new-password">
             <label for="password">Password</label>
             <span class="toggle-password" onclick="togglePassword('passwordField1', this)"><i class="fa-solid fa-eye-slash"></i></span>
-            <?php if (!empty($error['password'])) echo "<p>{$error['password']}</p>"; ?>
+            <?php if (!empty($error['password'])) echo "<p id='err'>{$error['password']}</p>"; ?>
         </div>
         
         <div class="user-box">
@@ -201,7 +241,7 @@ if(isset($_POST['submit'])){
         </div>
     </div>
     <div class="footerBottom">
-        <p>Copyright &copy;2024; Designed by <span class="designer">Te父cno</span></p>
+        <p>Copyright &copy;2024; Designed by <span class="designer">Tecno</span></p>
     </div>
 </footer>
 

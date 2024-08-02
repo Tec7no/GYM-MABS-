@@ -1,5 +1,6 @@
 <?php
 require("session.php");
+require("install.php");
 ?>
 <!Doctype html>
 <html>

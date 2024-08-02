@@ -79,7 +79,7 @@ require("session.php");
 </header>
 
 <section class="services">
-<h2 class="content" style="font-size : 40px;"><span class="span2">Healthy&nbsp; </span>food</h2> 
+<h2 class="content" style="font-size : 40px;"><span class="span2">Healthy&nbsp;</span>food</h2> 
 
 <div class="mc_amazon_card_box">
 

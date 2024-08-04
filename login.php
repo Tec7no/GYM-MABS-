@@ -3,6 +3,12 @@ require("functions.php");
 require("install.php");
 session_start();
 
+if (!isset($_SESSION['order'])) {
+    $_SESSION['order'] = array();
+}
+
+$p = count($_SESSION['order']);
+
 if (isset($_POST['submit'])) {
     $email = check($_POST['email']);
     $password = check($_POST['password']);
@@ -149,9 +155,9 @@ if (isset($_POST['submit'])) {
     <ul id="navbar">
         <li><a href="index.php">Home</a></li>
         <li><a href="shop.php">Shop</a></li>
-        <li><a href="aboutus.php">About</a></li>
+        <li><a href="about.php">About</a></li>
         <li><a class="active" href="#"><i class="fa-solid fa-user"></i></a></li>
-        <li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(0)</i></a></li>
+        <li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(<?php echo $p?>)</i></a></li>
     </ul>
     </div>
 </header>

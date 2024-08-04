@@ -1,6 +1,13 @@
 <?php
 require("session.php");
 require("install.php");
+
+if (!isset($_SESSION['order'])) {
+  $_SESSION['order'] = array();
+}
+
+$p = count($_SESSION['order']);
+
 ?>
 <!Doctype html>
 <html>
@@ -150,7 +157,7 @@ label {
                   <a href="logout.php">Logout</a>
               </div>
           </li>
-          <li><a class="active" href="cart.php"><i class="fa-solid fa-cart-shopping">(0)</i></a></li>
+          <li><a class="active" href="cart.php"><i class="fa-solid fa-cart-shopping">(<?php echo $p?>)</i></a></li>
       </ul>
       </div>
   </header>

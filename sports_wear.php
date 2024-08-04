@@ -1,5 +1,12 @@
 <?php
 require("session.php");
+
+if (!isset($_SESSION['order'])) {
+  $_SESSION['order'] = array();
+}
+
+$p = count($_SESSION['order']);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +80,7 @@ require("session.php");
                 <a href="logout.php">Logout</a>
             </div>
         </li>
-        <li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(0)</i></a></li>
+        <li><a href="cart.php"><i class="fa-solid fa-cart-shopping">(<?php echo $p?>)</i></a></li>
     </ul>
     </div>
 </header>
@@ -83,7 +90,7 @@ require("session.php");
 
 <div class="mc_amazon_card_box">
 
-    <a href="sports_wear.php" class="mc_amazon_card">                             <!-- clothes tag -->
+    <a href="product.php?id=1" class="mc_amazon_card">                             <!-- clothes tag -->
       <img src="img/sports_wear/w1.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
         <span style="color: #fff;">The hottest fashion show!</span> 
@@ -92,7 +99,7 @@ require("session.php");
     </a>
 
 
-    <a href="sports_supp.php" class="mc_amazon_card"> <!-- clothes tag -->
+    <a href="product.php?id=2" class="mc_amazon_card"> <!-- clothes tag -->
       <img src="img/sports_wear/w2.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
         <span style="color: #fff;">Safe product & best sallary</span> 
@@ -100,7 +107,7 @@ require("session.php");
       </div>
     </a>
 
-    <a href="sports_wear.php" class="mc_amazon_card">                             <!-- clothes tag -->
+    <a href="product.php?id=3" class="mc_amazon_card">                             <!-- clothes tag -->
       <img src="img/sports_wear/w3.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
         <span style="color: #fff;">The hottest fashion show!</span> 
@@ -108,7 +115,7 @@ require("session.php");
       </div>
     </a>
 
-      <a href="healthy_food.php" class="mc_amazon_card">
+      <a href="product.php?id=4" class="mc_amazon_card">
         <img src="img/sports_wear/w4.jpg" alt="Avatar" style="width:100%">
         <div class="mc_amazon_card_container" style="background-color: black;">
           <span style="color: #fff;">Keep healthy :D</span> 
@@ -118,7 +125,7 @@ require("session.php");
   </div>
 
   <div class="mc_amazon_card_box">  
-    <a href="protain_bar.php" class="mc_amazon_card"> 
+    <a href="product.php?id=5" class="mc_amazon_card"> 
       <img src="img/sports_wear/w5.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
         <span style="color: #fff;">Protain bar bro ♥</span> 
@@ -126,7 +133,7 @@ require("session.php");
       </div>
     </a>
     
-    <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
+    <a href="product.php?id=6" class="mc_amazon_card">  <!-- fat burners tag -->
       <img src="img/sports_wear/w6.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
         <span style="color: #fff;">Fat burners</span> 
@@ -135,7 +142,7 @@ require("session.php");
     </a>
     
 
-    <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
+    <a href="product.php?id=7" class="mc_amazon_card">  <!-- fat burners tag -->
       <img src="img/sports_wear/w7.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
         <span style="color: #fff;">Fat burners</span> 
@@ -144,7 +151,7 @@ require("session.php");
     </a>
 
 
-  <a href="fat_burners.php" class="mc_amazon_card"> 
+  <a href="product.php?id=8" class="mc_amazon_card"> 
     <img src="img/sports_wear/w8.jpg" alt="Avatar" style="width:100%">
     <div class="mc_amazon_card_container">
       <span style="color: #fff;">Fat burners</span> 

@@ -123,6 +123,13 @@ header.sticky{
   margin-bottom: 10px;
 }
 
+.text h1 {
+  color: #673ab7;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
 .text h5 {
   color: #673ab7;
   font-size: 22px;

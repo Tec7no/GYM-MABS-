@@ -7,6 +7,7 @@ if (!isset($_SESSION['order'])) {
 }
 
 $p = count($_SESSION['order']);
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "SELECT * FROM products where id = :id";

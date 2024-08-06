@@ -1,12 +1,7 @@
 <?php
-require("session.php");
-
-if (!isset($_SESSION['order'])) {
-  $_SESSION['order'] = array();
-}
-
-$p = count($_SESSION['order']);
-
+require("session/session.php");
+require("session/install.php");
+require("session/data.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +15,7 @@ $p = count($_SESSION['order']);
 
 <title>MABS Supplement</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <script src="js/scroll.js"></script>
 <style>
         .dropdown {
@@ -90,71 +85,71 @@ $p = count($_SESSION['order']);
 
 <div class="mc_amazon_card_box">
 
-    <a href="healthy_food.php" class="mc_amazon_card">                             <!-- clothes tag -->
+    <a href="product.php?id=26" class="mc_amazon_card">                             <!-- clothes tag -->
       <img src="img/healthy_food/h1.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">The hottest fashion show!</span> 
+        <span style="color: #fff;">Organic Nation Moringa Powder-100G <span style="color:black;">aykalam hena don't care</span></span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
 
 
-    <a href="sports_supp.php" class="mc_amazon_card"> <!-- clothes tag -->
+    <a href="product.php?id=27" class="mc_amazon_card"> <!-- clothes tag -->
       <img src="img/healthy_food/h2.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Safe product & best sallary</span> 
+        <span style="color: #fff;">Organic Nation Premium Matcha Powder-125Serv.-125G</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
 
-    <a href="healthy_food.php" class="mc_amazon_card">                             <!-- clothes tag -->
+    <a href="product.php?id=28" class="mc_amazon_card">                             <!-- clothes tag -->
       <img src="img/healthy_food/h3.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">The hottest fashion show!</span> 
+        <span style="color: #fff;">rganic Nation Honey Marjoram-400G <span style="color:black;">aykalam hena don't care</span></span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
 
-      <a href="healthy_food.php" class="mc_amazon_card">
+      <a href="product.php?id=29" class="mc_amazon_card">
         <img src="img/healthy_food/h4.jpg" alt="Avatar" style="width:100%">
         <div class="mc_amazon_card_container" style="background-color: black;">
-          <span style="color: #fff;">Keep healthy :D</span> 
+          <span style="color: #fff;">Organic Nation Black Seed Oil-250Ml <span style="color:black;">aykalam hena don't care</span></span> 
           <p style="color: #fff;">See more</p> 
         </div>
       </a>
   </div>
 
   <div class="mc_amazon_card_box">  
-    <a href="protain_bar.php" class="mc_amazon_card"> 
+    <a href="product.php?id=29" class="mc_amazon_card"> 
       <img src="img/healthy_food/h5.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Protain bar bro ♥</span> 
+        <span style="color: #fff;">Organic Nation Spirulina Powder-200G</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
     
-    <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
+    <a href="product.php?id=30" class="mc_amazon_card">  <!-- fat burners tag -->
       <img src="img/healthy_food/h6.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Fat burners</span> 
+        <span style="color: #fff;">Organic Nation Hazelnut butter 350G</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
     
 
-    <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
+    <a href="product.php?id=31" class="mc_amazon_card">  <!-- fat burners tag -->
       <img src="img/healthy_food/h7.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Fat burners</span> 
+        <span style="color: #fff;">Organic Nation Hazelnut butter with dark chocolate</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
 
 
-  <a href="fat_burners.php" class="mc_amazon_card"> 
+  <a href="product.php?id=32" class="mc_amazon_card"> 
     <img src="img/healthy_food/h8.jpg" alt="Avatar" style="width:100%">
     <div class="mc_amazon_card_container">
-      <span style="color: #fff;">Fat burners</span> 
+      <span style="color: #fff;">Organic Nation Guilt Free Chocolate Spread-370G</span> 
       <p style="color: #fff;">See more</p> 
     </div>
   </a>

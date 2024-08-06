@@ -1,13 +1,8 @@
 <?php 
-require("functions.php");
-require("install.php");
+require("session/functions.php");
+require("session/install.php");
 session_start();
-
-if (!isset($_SESSION['order'])) {
-    $_SESSION['order'] = array();
-}
-
-$p = count($_SESSION['order']);
+require("session/data.php");
 
 if(isset($_POST['submit'])){
     $username = check($_POST['username']);
@@ -82,7 +77,7 @@ if(isset($_POST['submit'])){
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <style>
         .about-section {
             background: url(img/3.jpg);

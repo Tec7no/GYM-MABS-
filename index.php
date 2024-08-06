@@ -1,11 +1,7 @@
 <?php
-include("session.php");
-
-if (!isset($_SESSION['order'])) {
-    $_SESSION['order'] = array();
-}
-
-$p = count($_SESSION['order']);
+require("session/session.php");
+require("session/install.php");
+require("session/data.php");
 
 ?>
 
@@ -22,7 +18,7 @@ $p = count($_SESSION['order']);
 <title>MABS Supplement</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <script type="text/javascript" src="js/scroll.js"></script>
 <script>
 function redirect() {
@@ -117,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 <section class="normal-sec">
-<h2 class="content" style="font-size : 50px;"><span class="span2">Best&nbsp;</span> sells</h2>
+<h2 class="content" style="font-size : 50px;"><span class="span2">Best&nbsp;</span>Sells</h2>
 <div class="mc_amazon_card_box">
 <a href="shop.php" class="mc_amazon_card">
   <img src="img/main/05.jpg" alt="Avatar" style="width:100%">

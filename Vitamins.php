@@ -1,12 +1,7 @@
 <?php
-require("session.php");
-
-if (!isset($_SESSION['order'])) {
-  $_SESSION['order'] = array();
-}
-
-$p = count($_SESSION['order']);
-
+require("session/session.php");
+require("session/install.php");
+require("session/data.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +15,7 @@ $p = count($_SESSION['order']);
 
 <title>MABS Supplement</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <script src="js/scroll.js"></script>
 <style>
         .dropdown {
@@ -90,71 +85,71 @@ $p = count($_SESSION['order']);
 
 <div class="mc_amazon_card_box">
 
-    <a href="Vitamins.php" class="mc_amazon_card">                             <!-- clothes tag -->
+    <a href="product.php?id=17" class="mc_amazon_card">                             <!-- clothes tag -->
       <img src="img/Vitamins/v1.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">The hottest fashion show!</span> 
+        <span style="color: #fff;">OPTI-MEN ay kalam ba5od space bs m4 aktar vitamin</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
 
 
-    <a href="sports_supp.php" class="mc_amazon_card"> <!-- clothes tag -->
+    <a href="product.php?id=18" class="mc_amazon_card"> <!-- clothes tag -->
       <img src="img/Vitamins/v2.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Safe product & best sallary</span> 
+        <span style="color: #fff;">Doctor's Best Collagen Types1&3 With Peptan And Vi</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
 
-    <a href="Vitamins.php" class="mc_amazon_card">                             <!-- clothes tag -->
+    <a href="product.php?id=19" class="mc_amazon_card">                             <!-- clothes tag -->
       <img src="img/Vitamins/v3.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">The hottest fashion show!</span> 
+        <span style="color: #fff;">ginseng-complex-with-royal-jelly-1000-mg-50-rapid-</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
 
-      <a href="healthy_food.php" class="mc_amazon_card">
+      <a href="product.php?id=20" class="mc_amazon_card">
         <img src="img/Vitamins/v4.jpg" alt="Avatar" style="width:100%">
         <div class="mc_amazon_card_container" style="background-color: black;">
-          <span style="color: #fff;">Keep healthy :D</span> 
+          <span style="color: #fff;">Doctor's Best High Absorption Co-Q10 With Bio Peri</span> 
           <p style="color: #fff;">See more</p> 
         </div>
       </a>
   </div>
 
   <div class="mc_amazon_card_box">  
-    <a href="Vitamins.php" class="mc_amazon_card"> 
+    <a href="product.php?id=21" class="mc_amazon_card"> 
       <img src="img/Vitamins/v5.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Protain bar bro ♥</span> 
+        <span style="color: #fff;">Optimum Nutrition Opti-Women-60Serv.-120Caps.</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
     
-    <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
+    <a href="product.php?id=22" class="mc_amazon_card">  <!-- fat burners tag -->
       <img src="img/Vitamins/v6.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Fat burners</span> 
+        <span style="color: #fff;">Sugarbearhair Vitamins 60 Gummies</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
     
 
-    <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
+    <a href="product.php?id=23" class="mc_amazon_card">  <!-- fat burners tag -->
       <img src="img/Vitamins/v7.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Fat burners</span> 
+        <span style="color: #fff;">Z-MAG by ATP Science</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
 
 
-  <a href="fat_burners.php" class="mc_amazon_card"> 
+  <a href="product.php?id=24" class="mc_amazon_card"> 
     <img src="img/Vitamins/v8.jpg" alt="Avatar" style="width:100%">
     <div class="mc_amazon_card_container">
-      <span style="color: #fff;">Fat burners</span> 
+      <span style="color: #fff;">Platinum Multivitamin</span> 
       <p style="color: #fff;">See more</p> 
     </div>
   </a>

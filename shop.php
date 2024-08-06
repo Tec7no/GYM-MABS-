@@ -1,12 +1,7 @@
 <?php
-require("session.php");
-
-if (!isset($_SESSION['order'])) {
-  $_SESSION['order'] = array();
-}
-
-$p = count($_SESSION['order']);
-
+require("session/session.php");
+require("session/install.php");
+require("session/data.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +15,7 @@ $p = count($_SESSION['order']);
 
 <title>MABS Supplement</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <script src="js/scroll.js"></script>
 <style>
         .dropdown {
@@ -92,7 +87,7 @@ $p = count($_SESSION['order']);
 <a href="sports_wear.php" class="mc_amazon_card">                             <!-- clothes tag -->
   <img src="img/main/05.jpg" alt="Avatar" style="width:100%">
   <div class="mc_amazon_card_container" style="background-color: black;">
-    <span style="color: #fff;">The hottest fashion show!</span> 
+    <span style="color: #fff;">Fitness Equipment's</span> 
     <p style="color: #fff;">See more</p> 
   </div>
 </a>
@@ -101,7 +96,7 @@ $p = count($_SESSION['order']);
 <a href="sports_supp.php" class="mc_amazon_card"> <!-- clothes tag -->
   <img src="img/main/01.jpg" alt="Avatar" style="width:100%">
   <div class="mc_amazon_card_container" style="background-color: black;">
-    <span style="color: #fff;">Safe product & best sallary</span> 
+    <span style="color: #fff;">Sports Supplements</span> 
     <p style="color: #fff;">See more</p> 
   </div>
 </a>
@@ -109,7 +104,7 @@ $p = count($_SESSION['order']);
 <a href="Vitamins.php" class="mc_amazon_card">  <!-- vitamins tag -->
   <img src="img/main/04.jpg" alt="Avatar" style="width:100%">
   <div class="mc_amazon_card_container" style="background-color: black;">
-    <span style="color: #fff;">Vitamins</span> 
+    <span style="color: #fff;">Vitamins & Minerals</span> 
     <p style="color: #fff;">See more</p> 
   </div>
 </a>
@@ -119,7 +114,7 @@ $p = count($_SESSION['order']);
   <a href="healthy_food.php" class="mc_amazon_card">
     <img src="img/main/03.jpg" alt="Avatar" style="width:100%">
     <div class="mc_amazon_card_container" style="background-color: black;">
-      <span style="color: #fff;">Keep healthy :D</span> 
+      <span style="color: #fff;">Healthy Food</span> 
       <p style="color: #fff;">See more</p> 
     </div>
   </a>
@@ -127,7 +122,7 @@ $p = count($_SESSION['order']);
   <a href="protain_bar.php" class="mc_amazon_card"> <!-- protain bar tag -->
     <img src="img/main/02.jpg" alt="Avatar" style="width:100%">
     <div class="mc_amazon_card_container" style="background-color: black;">
-      <span style="color: #fff;">Protain bar bro ♥</span> 
+      <span style="color: #fff;">Bars & Snacks</span> 
       <p style="color: #fff;">See more</p> 
     </div>
   </a>

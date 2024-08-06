@@ -1,12 +1,7 @@
 <?php
-require("session.php");
-
-if (!isset($_SESSION['order'])) {
-  $_SESSION['order'] = array();
-}
-
-$p = count($_SESSION['order']);
-
+require("session/session.php");
+require("session/install.php");
+require("session/data.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +15,7 @@ $p = count($_SESSION['order']);
 
 <title>MABS Supplement</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <script src="js/scroll.js"></script>
 <style>
         .dropdown {
@@ -70,7 +65,7 @@ $p = count($_SESSION['order']);
     <div> 
     <ul id="navbar">
         <li><a href="index.php">Home</a></li>
-        <li><a class="active" href="#">Shop</a></li>
+        <li><a class="active" href="shop.php">Shop</a></li>
         <li><a href="about.php">About</a></li>
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">
@@ -93,7 +88,7 @@ $p = count($_SESSION['order']);
     <a href="sports_supp.php" class="mc_amazon_card">                             <!-- clothes tag -->
       <img src="img/sports_supp/001.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">The hottest fashion show!</span> 
+        <span style="color: #fff;">Max muscle Iso Complex Triple Sourced Isolate Prot</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
@@ -102,7 +97,7 @@ $p = count($_SESSION['order']);
     <a href="sports_supp.php" class="mc_amazon_card"> <!-- clothes tag -->
       <img src="img/sports_supp/002.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Safe product & best sallary</span> 
+        <span style="color: #fff;">Gold Standard solate blah protain</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
@@ -110,7 +105,7 @@ $p = count($_SESSION['order']);
     <a href="sports_supp.php" class="mc_amazon_card">                             <!-- clothes tag -->
       <img src="img/sports_supp/003.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">The hottest fashion show!</span> 
+        <span style="color: #fff;">Whey Protein Shadowhey Hydrolyzed</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
@@ -118,7 +113,7 @@ $p = count($_SESSION['order']);
       <a href="healthy_food.php" class="mc_amazon_card">
         <img src="img/sports_supp/004.jpg" alt="Avatar" style="width:100%">
         <div class="mc_amazon_card_container" style="background-color: black;">
-          <span style="color: #fff;">Keep healthy :D</span> 
+          <span style="color: #fff;">Muscle Add Whey Add-60Serv.-2100G-French-Vanilla </span> 
           <p style="color: #fff;">See more</p> 
         </div>
       </a>
@@ -128,7 +123,7 @@ $p = count($_SESSION['order']);
     <a href="protain_bar.php" class="mc_amazon_card"> 
       <img src="img/sports_supp/005.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Protain bar bro ♥</span> 
+        <span style="color: #fff;">Muscle Add Whey Add-60Serv.-2100G-Strawberry Milks</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
@@ -136,7 +131,7 @@ $p = count($_SESSION['order']);
     <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
       <img src="img/sports_supp/006.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Fat burners</span> 
+        <span style="color: #fff;">Muscle Add Iso Add-30Serv.-1080G.-Chocolate</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
@@ -145,7 +140,7 @@ $p = count($_SESSION['order']);
     <a href="fat_burners.php" class="mc_amazon_card">  <!-- fat burners tag -->
       <img src="img/sports_supp/007.jpg" alt="Avatar" style="width:100%">
       <div class="mc_amazon_card_container" style="background-color: black;">
-        <span style="color: #fff;">Fat burners</span> 
+        <span style="color: #fff;">Muscle Add Whey Add-60Serv.-2100G-Chocolate Ice Cream</span> 
         <p style="color: #fff;">See more</p> 
       </div>
     </a>
@@ -154,7 +149,7 @@ $p = count($_SESSION['order']);
   <a href="fat_burners.php" class="mc_amazon_card"> 
     <img src="img/sports_supp/008.jpg" alt="Avatar" style="width:100%">
     <div class="mc_amazon_card_container">
-      <span style="color: #fff;">Fat burners</span> 
+      <span style="color: #fff;">Muscle Add Whey Add-60Serv.-2100G-Vanilla Ice Cream</span> 
       <p style="color: #fff;">See more</p> 
     </div>
   </a>

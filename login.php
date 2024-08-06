@@ -1,17 +1,13 @@
 <?php 
-require("functions.php");
-require("install.php");
+require("session/functions.php");
+require("session/install.php");
 session_start();
-
-if (!isset($_SESSION['order'])) {
-    $_SESSION['order'] = array();
-}
-
-$p = count($_SESSION['order']);
+require("session/data.php");
 
 if (isset($_POST['submit'])) {
     $email = check($_POST['email']);
     $password = check($_POST['password']);
+    $rememberMe = isset($_POST['rememberMe']);
 
     $error = array(
         'email' => '',
@@ -41,6 +37,22 @@ if (isset($_POST['submit'])) {
             if ($user && password_verify($password, $user['password'])) {
                 // Set the username in the session
                 $_SESSION['username'] = $user['username'];
+
+                // Generate a random token
+                $token = bin2hex(random_bytes(32));
+
+                // Store the token in the database along with the username
+                $stmt = $connection->prepare("UPDATE users SET session_token = ? WHERE username = ?");
+                $stmt->execute([$token, $user['username']]);
+
+                // Set a cookie for the session based on "Remember Me"
+                if ($rememberMe) {
+                    $expireTime = time() + (30 * 24 * 60 * 60); // 30 days
+                } else {
+                    $expireTime = 0; // Session cookie
+                }
+                setcookie('session_token', $token, $expireTime, "/");
+
                 header("Location: index.php");
                 exit();
             } else {
@@ -57,7 +69,7 @@ if (isset($_POST['submit'])) {
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="css/style.css" />
 
 <style>
 .about-section {
@@ -180,7 +192,14 @@ if (isset($_POST['submit'])) {
             <?php if (!empty($error['password'])) echo "<p class='err'>{$error['password']}</p>"; ?>
         </div>
         
+        <div>
+            <input type="checkbox" id="rememberMe" name="rememberMe">
+            <label for="rememberMe">Remember Me for 30 days</label>
+        </div>
+
+
         <div class="button-form">
+            
             <button type="submit" name="submit" id="submit">Login</button>
             <div id="register">
                 Don't have an account? <br>

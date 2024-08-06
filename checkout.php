@@ -1,12 +1,7 @@
 <?php
-require("session.php");
-
-if (!isset($_SESSION['order'])) {
-  $_SESSION['order'] = array();
-}
-
-$p = count($_SESSION['order']);
-
+require("session/session.php");
+require("session/install.php");
+require("session/data.php");
 ?>
 <!DOCTYPE html>
 <html>

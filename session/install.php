@@ -20,7 +20,8 @@ try {
         credit_card_number VARCHAR(20) NOT NULL,
         cvv VARCHAR(4) NOT NULL,
         exp_month INT(2) NOT NULL,
-        exp_year INT(4) NOT NULL
+        exp_year INT(4) NOT NULL,
+        session_token VARCHAR(64) DEFAULT NULL
     );";
     $connection->exec($sql1);
 
@@ -38,6 +39,8 @@ try {
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         product_id INT UNSIGNED NOT NULL,
         user_id INT UNSIGNED NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         FOREIGN KEY (product_id) REFERENCES products(id),
         FOREIGN KEY (user_id) REFERENCES users(id)
     );";
